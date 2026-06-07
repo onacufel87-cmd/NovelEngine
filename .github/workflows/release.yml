@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: 安装前端依赖
+        run: npm ci
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v__VERSION__
+          releaseName: 小说引擎 v__VERSION__
+          releaseBody: |
+            ## 下载说明
+
+            | 文件 | 适用场景 |
+            |------|----------|
+            | `*-setup.exe` | **推荐**：安装版，自动处理 WebView2，含开始菜单与桌面快捷方式 |
+            | `novel-reader-core.exe` | 便携版：解压/复制即用，需系统已安装 WebView2 |
+
+            详细安装步骤见 [docs/INSTALL.md](https://github.com/${{ github.repository }}/blob/main/docs/INSTALL.md)。
+
+            **系统要求**：Windows 10 / 11（64 位）
+          releaseDraft: true
+          prerelease: false
+          includeUpdaterArtifacts: false

@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Rust
+src-tauri/target/
+
+# SQLite 数据库
+*.db
+
+# 用户书源规则（勿提交真实规则）
+rules/*.json
+!rules/example_rule.json
+
+# 本地图标处理中间文件（可选）
+assets/logo-transparent.png

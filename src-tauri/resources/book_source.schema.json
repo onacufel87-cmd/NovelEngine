@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://novel-reader-core.local/schemas/book_source.json",
+  "title": "BookSource",
+  "description": "小说引擎书源规则 JSON Schema（与 spider/rule.rs BookSource 对齐）",
+  "type": "object",
+  "required": ["name", "chapter_list_selector", "content_selector"],
+  "additionalProperties": true,
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "search_url": { "type": "string" },
+    "search_result_selector": { "type": "string" },
+    "search_title_selector": { "type": "string" },
+    "search_author_selector": { "type": "string" },
+    "search_link_selector": { "type": "string" },
+    "search_link_attr": { "type": "string" },
+    "book_list_selector": { "type": "string" },
+    "book_title_selector": { "type": "string" },
+    "rank_urls": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "chapter_list_selector": { "type": "string", "minLength": 1 },
+    "chapter_title_selector": { "type": "string", "default": "text" },
+    "content_selector": { "type": "string", "minLength": 1 },
+    "next_page_selector": { "type": ["string", "null"] },
+    "encoding": { "type": "string", "enum": ["utf-8", "gbk", "gb2312", "big5"] },
+    "ad_keywords": { "type": "array", "items": { "type": "string" } },
+    "clean_patterns": { "type": "array", "items": { "type": "string" } },
+    "cookies": { "type": "string" },
+    "request_interval_ms": { "type": "integer", "minimum": 0, "maximum": 60000 }
+  },
+  "if": {
+    "properties": {
+      "search_url": { "minLength": 1 }
+    },
+    "required": ["search_url"]
+  },
+  "then": {
+    "required": ["search_result_selector"]
+  }
+}

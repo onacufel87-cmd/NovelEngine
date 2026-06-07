@@ -1,0 +1,21 @@
+{
+  "name": "本地测试书源",
+  "search_url": "{origin}/test-search.html?q={keyword}",
+  "search_result_selector": ".search-item",
+  "search_title_selector": ".title",
+  "search_author_selector": ".author",
+  "search_link_selector": "a.book-link",
+  "chapter_list_selector": "#list a",
+  "chapter_title_selector": "text",
+  "content_selector": "#content",
+  "next_page_selector": "#next-page",
+  "book_list_selector": "#rank-list a",
+  "book_title_selector": "text",
+  "rank_urls": {
+    "热门": "{origin}/test-rank-hot.html",
+    "新书": "{origin}/test-rank-new.html"
+  },
+  "encoding": "utf-8",
+  "ad_keywords": ["请记住本站网址", "本章未完"],
+  "clean_patterns": []
+}

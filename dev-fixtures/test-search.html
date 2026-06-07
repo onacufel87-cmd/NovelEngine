@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>搜索结果 — 演示</title>
+    <style>
+      body { font-family: "PingFang SC", sans-serif; max-width: 640px; margin: 40px auto; }
+      .search-item { padding: 12px 0; border-bottom: 1px solid #eee; }
+      .title { font-weight: 600; }
+      .author { color: #888; font-size: 0.9rem; }
+      a.book-link { color: #2980b9; font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <h1>搜索演示</h1>
+    <p id="keyword-hint"></p>
+    <div class="results">
+      <div class="search-item">
+        <div class="title">引擎测试小说</div>
+        <div class="author">作者：演示作家</div>
+        <a class="book-link" href="/test-catalog.html">查看目录</a>
+      </div>
+      <div class="search-item">
+        <div class="title">云海传奇</div>
+        <div class="author">作者：测试作者</div>
+        <a class="book-link" href="/test-catalog.html">查看目录</a>
+      </div>
+    </div>
+    <script>
+      const q = new URLSearchParams(location.search).get("q") || "";
+      document.getElementById("keyword-hint").textContent = q ? `关键词：${q}` : "请输入关键词";
+    </script>
+  </body>
+</html>

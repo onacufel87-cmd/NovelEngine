@@ -1,0 +1,185 @@
+/* 阅读器主题：作用于 .reader-view 容器 */
+
+
+
+.reader-view.reader-theme-light {
+
+  --reader-bg: #f9f7f4;
+
+  --reader-text: #2c3e2f;
+
+  --reader-border: #ede9e2;
+
+}
+
+
+
+.reader-view.reader-theme-dark {
+
+  --reader-bg: #1a1e1a;
+
+  --reader-text: #e2e1d6;
+
+  --reader-border: #3a403a;
+
+}
+
+
+
+.reader-view.reader-theme-sepia {
+
+  --reader-bg: #f4ecd8;
+
+  --reader-text: #5c4b37;
+
+  --reader-border: #d4c4a8;
+
+}
+
+
+
+/* 护眼绿 */
+
+.reader-view.reader-theme-green {
+
+  --reader-bg: #c7edcc;
+
+  --reader-text: #2d5016;
+
+  --reader-border: #a8d5ae;
+
+}
+
+
+
+/* 羊皮暖黄 */
+
+.reader-view.reader-theme-parchment {
+
+  --reader-bg: #f5e6c8;
+
+  --reader-text: #5a4632;
+
+  --reader-border: #dcc9a8;
+
+}
+
+
+
+/* 浅蓝灰 */
+
+.reader-view.reader-theme-bluegray {
+
+  --reader-bg: #e3eaf2;
+
+  --reader-text: #3a4a5c;
+
+  --reader-border: #c5d0dc;
+
+}
+
+
+
+/* 暖杏色 */
+
+.reader-view.reader-theme-warm {
+
+  --reader-bg: #faf0e4;
+
+  --reader-text: #5c4033;
+
+  --reader-border: #e8d5c4;
+
+}
+
+
+
+/* 深靛蓝（夜间护眼） */
+
+.reader-view.reader-theme-nightblue {
+
+  --reader-bg: #1a2332;
+
+  --reader-text: #c8d4e8;
+
+  --reader-border: #2d3a4f;
+
+}
+
+
+
+.reader-view {
+
+  background: var(--reader-bg, var(--color-surface));
+
+  color: var(--reader-text, var(--color-text));
+
+}
+
+
+
+.reader-view .reader-toolbar {
+
+  border-bottom-color: var(--reader-border, var(--color-border));
+
+  background: var(--reader-bg, var(--color-surface));
+
+}
+
+
+
+.reader-view .reader-content {
+
+  background: var(--reader-bg, var(--color-surface));
+
+  color: var(--reader-text, var(--color-text));
+
+}
+
+
+
+.reader-view .nav-btn,
+
+.reader-view .settings-btn,
+
+.reader-view .icon-btn,
+
+.reader-view .chapter-select {
+
+  background: var(--reader-bg, var(--color-surface));
+
+  color: var(--reader-text, var(--color-text));
+
+  border-color: var(--reader-border, var(--color-border));
+
+}
+
+
+
+.reader-view .back-link {
+
+  color: var(--color-primary);
+
+}
+
+
+
+.reader-view .reader-bottom-bar {
+
+  background: var(--reader-bg, var(--color-surface));
+
+  border-top-color: var(--reader-border, var(--color-border));
+
+}
+
+
+
+/* 阅读器内目录浮钮底色（略浅于正文，贴近参考稿） */
+.reader-view {
+  --catalog-tile-bg: color-mix(in srgb, var(--reader-bg, #f9f7f4) 88%, var(--color-surface) 12%);
+}
+
+.reader-view.reader-theme-dark {
+  --catalog-tile-bg: var(--color-surface);
+}
+
