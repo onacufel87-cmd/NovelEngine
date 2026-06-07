@@ -6,7 +6,7 @@
 
 - **默认**：由 Tauri 按「当前 Windows 用户 + 应用 ID」自动分配，例如  
   `C:\Users\张三\AppData\Roaming\com.novel.reader.core\library\`  
-  你看到的 `23282` 只是本机用户名，**不是写死在代码里**。
+  
 - **自定义**：可在设置 → 本地书库 →「更改书库文件夹」指定任意目录（如 `D:\Novels`），保存后重启生效。
 
 配置保存在 `{app_data}/library_config.json`，与书库数据分离。
